@@ -9,7 +9,16 @@
 		<%= @post.body %>
 	</p>
 
-
+<h2>Comments</h2>
+<% @post.comments.each do |comment| %>
+<p>
+	<%= comment.body %>
+</p>
+<p><i>
+	<%= comment.name %>	
+</i></p>
+<% end %>
+<h2>Leave a comment</h2>
 <%= form_for([@post, @post.comments.build]) do |f| %>
 	<p>
 		<%= f.label :name %>
