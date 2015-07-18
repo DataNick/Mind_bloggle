@@ -8,3 +8,18 @@
 	<p>
 		<%= @post.body %>
 	</p>
+
+
+<%= form_for([@post, @post.comments.build]) do |f| %>
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</p>
+	<br/>
+	<p>
+		<%= f.label :body %>
+		<%= f.text_area :body %>
+	</p>
+	<br/>
+	<%= f.submit %>
+<% end %>
