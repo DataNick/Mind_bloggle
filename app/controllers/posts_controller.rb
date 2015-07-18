@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-  	@posts = Post.all
+  	# @posts = Post.all
   end
 
   def show
@@ -8,22 +8,21 @@ class PostsController < ApplicationController
   end
 
   def new
-  	@post = Post.build(post_params)
+  	# @post = Post.build(post_params)
   end
 
   def create
-  	@post = Post.build(params[:post])
-  	if @post.save
-  		redirect_to @post
-  	else
-  		render 'new'
-  	end
+  	@post = Post.new(post_params)
+  	@post.save
+
+  	redirect_to @post
+  
   end
 
   private
 
   def post_params
-
+  	params.require(:post).permit(:title, :body)
   end
 
 end
