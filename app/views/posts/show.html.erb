@@ -9,8 +9,10 @@
 		<%= @post.body %>
 	</p>
 
+	<%= link_to "Edit", edit_post_path %> | <%= link_to "Delete", post_path(@post), method: :delete %>
+
 <h2>Comments</h2>
 	<%= render "comments/comment" %>
-	
+
 <h2>Leave a comment</h2>
 	<%= render "comments/form" %>
