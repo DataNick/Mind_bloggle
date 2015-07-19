@@ -10,25 +10,7 @@
 	</p>
 
 <h2>Comments</h2>
-<% @post.comments.each do |comment| %>
-<p>
-	<%= comment.body %>
-</p>
-<p><i>
-	<%= comment.name %>	
-</i></p>
-<% end %>
+	<%= render "comments/comment" %>
+
 <h2>Leave a comment</h2>
-<%= form_for([@post, @post.comments.build]) do |f| %>
-	<p>
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-	</p>
-	<br/>
-	<p>
-		<%= f.label :body %>
-		<%= f.text_area :body %>
-	</p>
-	<br/>
-	<%= f.submit %>
-<% end %>
+	<%= render "comments/form" %>

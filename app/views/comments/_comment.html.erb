@@ -1,1 +1,8 @@
-_comment.html.erb
+<% @post.comments.each do |comment| %>
+<p>
+	<%= comment.body %>
+</p>
+<p><i>
+	<%= comment.name %>	submitted this comment <%= time_ago_in_words(comment.created_at) %>
+</i></p>
+<% end %>
