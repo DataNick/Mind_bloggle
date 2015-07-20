@@ -1,6 +1,7 @@
 <!-- <div class="container"> -->
 
 <%= form_for([@post, @post.comments.build]) do |f| %>
+
 <div class="form-group">
 	<p>
 		<%= f.label :name %>
@@ -16,7 +17,7 @@
 	</div>
 	<br/>
 	<div class="form-group">
-	<%= f.submit :type => "submit", :class => 'btn btn-success btn-block'%>
+	<%= f.submit :type => "submit", :class => 'btn btn-success btn-block', :id => "update-post-btn" %>
 	</div>
 <% end %>
 
