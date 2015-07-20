@@ -1,0 +1,24 @@
+<ul class='nav nav-tabs'>
+  <li><%= link_to "Back", @post, :class => 'navbar-toggle collapsed' %></li>
+  </ul>
+</br>
+<%= form_for @post do |f| %>
+  <div class="form-group">
+  <p>
+    <%= f.label "title" %><br>
+    <%= f.text_field "title", :class => "form-control" %>
+  </p>
+  </div>
+  <div class="form-group">
+  <p>
+    <%= f.label "body" %><br>
+    <%= f.text_field "body", :class => "form-control" %>
+  </p>
+  </div>
+ 
+  <div class="form-group">
+  <p>
+    <%= submit_tag "Save Changes", :class => 'btn btn-primary btn-block' %>
+  </p>
+  </div>
+<% end %>
