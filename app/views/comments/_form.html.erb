@@ -1,13 +1,23 @@
+<div class="container">
+
 <%= form_for([@post, @post.comments.build]) do |f| %>
+<div class="form-group">
 	<p>
 		<%= f.label :name %>
-		<%= f.text_field :name %>
+		<%= f.text_field :name, :class => "form-control" %>
 	</p>
+	</div>
 	<br/>
+	<div class="form-group">
 	<p>
 		<%= f.label :body %>
-		<%= f.text_area :body %>
+		<%= f.text_area :body, :class => "form-control" %>
 	</p>
+	</div>
 	<br/>
-	<%= f.submit %>
+	<div class="form-group">
+	<%= f.submit :type => "submit", :class => 'btn btn-success btn-block'%>
+	</div>
 <% end %>
+
+</div>

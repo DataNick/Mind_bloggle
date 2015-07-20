@@ -1,0 +1,23 @@
+<div class="container">
+<%= form_for :post, url: posts_path do |f| %>
+
+	<div class="form-group">
+	<p>
+		<%=f.label "title" %>
+		<%=f.text_field "title", :class => "form-control", :placeholder => "Untitled" %>
+	</p>
+	</div>
+	<div class="form-group">
+	<p>
+		<%= f.label "body" %>
+		<%= f.text_area "body", :class => "form-control", :placeholder => "What's on your mind?" %>
+	</p>
+	</div>
+	<div class="form-group">
+	<p>
+		<%= f.submit "Save", :type => "submit", :class => 'btn btn-success btn-block' %>
+	</p>
+	</div>
+
+	<% end %>
+	</div>
